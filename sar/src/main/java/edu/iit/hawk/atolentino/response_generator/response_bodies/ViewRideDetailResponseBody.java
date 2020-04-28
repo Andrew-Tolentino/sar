@@ -33,7 +33,7 @@ public class ViewRideDetailResponseBody implements ResponseBodyUtility {
 		jsonBody.add(ResponseBodyUtility.MAX_PASSENGERS_KEY, gson.toJsonTree(ride.getMaxPassengers()));
 		jsonBody.add(ResponseBodyUtility.AMOUNT_PER_PASSENGER_KEY, gson.toJsonTree(
 				ride.getAmountPerPassenger() == null 
-				? JsonNull.INSTANCE : ride.getAmountPerPassenger()
+				? 0.0 : ride.getAmountPerPassenger()
 				));	
 		jsonBody.add(ResponseBodyUtility.CONDITIONS_KEY, gson.toJsonTree(ride.getConditions()));
 		jsonBody.add(ResponseBodyUtility.DRIVER_KEY, gson.toJsonTree(account.getFirstName()));
