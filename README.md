@@ -85,7 +85,7 @@ $ ./gradlew build
 
 ### 3. Deploy
 
-Go to the WAR file 
+Go to the WAR file produced after building
 
 ```bash
 $ cd build/libs
