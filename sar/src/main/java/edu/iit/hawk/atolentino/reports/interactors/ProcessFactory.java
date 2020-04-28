@@ -34,7 +34,7 @@ public class ProcessFactory {
 	}
 	
 	public static String getProcessName(ProcessTypes type) {
-		String name;		
+		String name = null;		
 		switch(type) {
 		case PROCESS907:
 			name = Process907.NAME;
@@ -42,10 +42,7 @@ public class ProcessFactory {
 			
 		case PROCESS911:
 			name = Process911.NAME;
-			break;
-			
-		default:
-			throw new IllegalArgumentException("Invalid ProcessTypes argument");
+			break;		
 		}
 		return name;
 	}
