@@ -34,6 +34,7 @@ import edu.iit.hawk.atolentino.ride_management.interactors.RideManager;
 import java.text.ParseException;
 import java.util.Iterator;
 
+//import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
@@ -235,8 +236,6 @@ public class ShareARide {
 		int sid;
 		if (rideManager.isAccountDriverOfRide(rid, aid)) {
 			sid = accountManager.rateDriver(aid, date, rateInformation);
-			accountManager.incrementDriverRideParticipation(aid);
-
 		}
 		
 		else {
@@ -495,6 +494,9 @@ public class ShareARide {
 		int aid = updateJoinRequestInformation.getAid();
 		if (updateJoinRequestPatch.getType() == PatchType.RIDE_CONFIRMED) {
 			if (rideManager.isAccountDriverOfRide(rid, aid)) {
+				accountManager.incrementDriverRideParticipation(aid);
+				int riderAid = rideManager.getJoinRequestCreatorId(rid, jid);
+				accountManager.incrementDriverRideParticipation(riderAid);
 				rideManager.updateRideConfirmed(rid, jid, updateJoinRequestInformation);
 				return new ShareARideResponseBuilder(Status.OK).build();
 			}
