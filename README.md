@@ -136,6 +136,8 @@ This is a detailed unit-test coverage report.
 ## Credits and Acknowledgements
 I would to thank professor Virgil Bistriceanu and the TA Ritvij Saxena for helping me out throughout the lifecycle of this project. I have gained a lot of insight on designing and creating RESTful applications which I will I continue to practice on.
 
+In the DateFormatTest file, the unit tests may fail due to time zone differences when run.
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](https://choosealicense.com/licenses/mit/) file for details
 [LICENSE.md ](https://choosealicense.com/licenses/mit/)
