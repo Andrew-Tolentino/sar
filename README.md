@@ -112,7 +112,7 @@ $ chmod +x ./catalina.sh
 Run the catalina.sh executable
 
 ```bash
-$ ./catalina.sh
+$ ./catalina.sh run
 ```
 Press Ctrl+C anytime you want to stop the server.
 
