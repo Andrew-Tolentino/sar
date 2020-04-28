@@ -164,7 +164,7 @@ public class RideManager implements RideManagerBoundary {
 				Date date = formatter.parse(dateStr);
 				Calendar calendar = Calendar.getInstance();
 				calendar.setTime(date);
-				long rideTimeStamp = calendar.getTimeInMillis();
+				long rideTimeStamp = calendar.getTimeInMillis()/ 1000;
 				if (startDate <= rideTimeStamp && rideTimeStamp <= endDate) {
 					filteredRides.add(ride);
 				}
